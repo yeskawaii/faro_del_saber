@@ -24,3 +24,9 @@ document.addEventListener("DOMContentLoaded", function() {
 window.addEventListener('load', function() {
     document.querySelector('.loader-container').style.display = 'none';
 });
+
+
+function toggleMenu() {
+    const ovalBar = document.querySelector('.oval-bar');
+    ovalBar.classList.toggle('show-menu'); // Activa o desactiva el menú desplegable
+}

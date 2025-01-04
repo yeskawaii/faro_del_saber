@@ -14,7 +14,7 @@
 
 /* Barra completa en la parte superior */
 .top-bar {
-    background-color: #0078d7; /* Fondo de la barra */
+    background-color: #00B0E4; /* Fondo de la barra */
     padding: 10px 0; /* Espaciado vertical */
     display: flex; /* Usamos flexbox para alinear los elementos */
     justify-content: space-between; /* Espacio entre los elementos */
@@ -127,26 +127,29 @@
     }
 }
 
-
 /* Barra ovalada */
 .oval-bar {
-    background-color: #0078d7; /* Color de fondo de la barra */
+    background-color: #FFDC00; /* Color de fondo de la barra */
     border-radius: 50px; /* Bordes redondeados para la forma ovalada */
     width: 90%; /* Ancho de la barra */
     max-width: 600px; /* Ancho máximo */
     padding: 1rem; /* Espaciado interno */
     margin: 2rem auto; /* Centramos la barra */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    position: relative; /* Para posicionar el menú hamburguesa */
 }
 
+/* Estilo para los enlaces del menú */
 .oval-bar ul {
     display: flex;
     justify-content: space-around; /* Espaciado entre enlaces */
     margin: 0;
     padding: 0;
     list-style: none; /* Sin viñetas */
+    transition: all 0.3s ease; /* Animación suave para la transición */
 }
 
+/* Estilo para los enlaces */
 .oval-bar a {
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
@@ -157,25 +160,80 @@
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Transición suave */
 }
 
+/* Efecto hover y active */
 .oval-bar a:hover,
 .oval-bar a.active {
-    background-color: #005bb5; /* Color al pasar el cursor o al hacer clic */
+    background-color: #ccb104; /* Color al pasar el cursor o al hacer clic */
     transform: scale(1.1); /* Escala el enlace un 10% */
     font-size: 1.2rem; /* Aumenta ligeramente el tamaño de la fuente */
 }
 
-@media (max-width: 576px) {
+/* Estilos para el icono del menú hamburguesa */
+.menu-toggle {
+    display: none; /* Ocultamos el menú hamburguesa por defecto */
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que el menú hamburguesa esté sobre otros elementos */
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 4px 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
     .oval-bar {
-        padding: 0.5rem; /* Reducimos el espaciado interno */
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
     }
 
     .oval-bar ul {
-        flex-direction: column; /* Apilamos los enlaces verticalmente */
-        gap: 0.5rem; /* Espaciado entre enlaces */
-        width: 90%;
+        flex-direction: column; /* Apilamos los elementos verticalmente */
+        align-items: center; /* Alineación central */
+        gap: 1rem; /* Espaciado entre los enlaces */
+        width: 100%; /* Aseguramos que ocupe todo el ancho disponible */
+        display: none; /* Ocultamos el menú inicialmente */
+        background-color: #FFDC00; /* Fondo amarillo para el menú */
+        border-radius: 30px; /* Bordes redondeados */
+        padding: 1rem 0; /* Espaciado alrededor de los enlaces */
+        position: absolute; /* Para que se deslice desde la parte superior */
+        top: 60px; /* Ajuste para que quede debajo del icono del menú */
+        left: 50%;
+        transform: translateX(-50%); /* Centramos el menú horizontalmente */
+        animation: slideDown 0.5s ease-out; /* Animación para que el menú baje */
     }
 
     .oval-bar a {
-        font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+        font-size: 1.1rem; /* Aumentamos el tamaño de los enlaces */
+        padding: 1rem 2rem; /* Aumentamos el espaciado interno */
+    }
+
+    /* Mostrar el menú cuando se active */
+    .oval-bar.show-menu ul {
+        display: flex; /* Mostramos el menú cuando la clase show-menu esté activa */
+    }
+
+    /* Mostrar el icono del menú hamburguesa */
+    .menu-toggle {
+        display: flex; /* Mostramos el icono del menú */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Animación de deslizamiento del menú */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
