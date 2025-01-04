@@ -17,6 +17,26 @@ function updateImage() {
     currentImageElement.src = images[currentIndex];
 }
 
+document.querySelectorAll('.oval-bar a').forEach(function(link) {
+    link.addEventListener('click', function() {
+        this.classList.add('active');
+        // Eliminar la clase active después de un tiempo (para que la animación termine)
+        setTimeout(() => {
+            this.classList.remove('active');
+        }, 300); // 300ms igual que la duración de la animación
+    });
+});
+
+window.addEventListener('load', function() {
+    document.querySelector('.loader-container').style.display = 'none';
+});
+
+
+function toggleMenu() {
+    const ovalBar = document.querySelector('.oval-bar');
+    ovalBar.classList.toggle('show-menu'); // Activa o desactiva el menú desplegable
+}
+
 // Función para aplicar la rotación a las manos
 function rotateHand(button, direction) {
     if (direction === 'left') {
