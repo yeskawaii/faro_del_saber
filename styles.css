@@ -1,3 +1,95 @@
+/* pantalla de carga */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #fff; /* Fondo blanco */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* Se asegura de que esté por encima de otros elementos */
+}
+
+/* Barra completa en la parte superior */
+.top-bar {
+    background-color: #0078d7; /* Fondo de la barra */
+    padding: 10px 0; /* Espaciado vertical */
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Alineación vertical al centro */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.top-bar .container {
+    display: flex; /* Flexbox para los elementos dentro del header */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Alineación vertical */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1200px; /* Opcional: Limitar el ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido dentro del contenedor */
+}
+
+.top-bar .logo {
+    width: 100px; /* Establece el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s ease-in-out; /* Transición suave para el escalado */
+}
+
+.top-bar .logo:hover {
+    transform: scale(1.2); /* Aumenta el tamaño de la imagen al 120% al pasar el cursor */
+}
+
+/* Animación de cambio de color de izquierda a derecha */
+.top-bar .title {
+    color: white; /* Color inicial del texto */
+    font-size: 3rem; /* Tamaño del título */
+    text-align: center; /* Centra el texto */
+    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Asegura que no se desborde el gradiente */
+}
+
+/* Estilo para el contenedor del título */
+.top-bar .title {
+    color: white; /* Color inicial del texto */
+    font-size: 3rem; /* Tamaño del título */
+    text-align: center; /* Centra el texto */
+    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Asegura que no se desborde el gradiente */
+}
+
+/* Estilo para cada letra */
+.top-bar .title span {
+    display: inline-block;
+    color: transparent; /* El color inicial es transparente */
+    background: linear-gradient(to right, white 50%, yellow 50%);
+    background-size: 200% 100%; /* Asegura que el gradiente cubra el texto */
+    -webkit-background-clip: text; /* Para que el gradiente afecte solo al texto */
+    transition: background-position 0.01s ease;
+}
+
+/* Animación al pasar el ratón por encima del título */
+.top-bar .title:hover span {
+    animation: colorChange 3s forwards; /* Se anima una sola vez */
+}
+
+/* Animación de cambio de color de izquierda a derecha */
+@keyframes colorChange {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+        opacity: 1; /* Se vuelve visible */
+    }
+}
+
+
 /* Barra ovalada */
 .oval-bar {
     background-color: #0078d7; /* Color de fondo de la barra */
@@ -33,9 +125,6 @@
     transform: scale(1.1); /* Escala el enlace un 10% */
     font-size: 1.2rem; /* Aumenta ligeramente el tamaño de la fuente */
 }
-
-
-
 
 @media (max-width: 576px) {
     .oval-bar {
