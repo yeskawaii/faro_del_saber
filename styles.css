@@ -1,0 +1,53 @@
+/* Barra ovalada */
+.oval-bar {
+    background-color: #0078d7; /* Color de fondo de la barra */
+    border-radius: 50px; /* Bordes redondeados para la forma ovalada */
+    width: 90%; /* Ancho de la barra */
+    max-width: 600px; /* Ancho máximo */
+    padding: 1rem; /* Espaciado interno */
+    margin: 2rem auto; /* Centramos la barra */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+}
+
+.oval-bar ul {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre enlaces */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Sin viñetas */
+}
+
+.oval-bar a {
+    color: white; /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    font-size: 1rem; /* Tamaño base de la fuente */
+    padding: 0.5rem 1rem; /* Espaciado interno de los enlaces */
+    border-radius: 30px; /* Bordes redondeados fijos */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, font-size 0.3s ease-in-out; /* Transición suave */
+}
+
+.oval-bar a:hover,
+.oval-bar a.active {
+    background-color: #005bb5; /* Color al pasar el cursor o al hacer clic */
+    transform: scale(1.1); /* Escala el enlace un 10% */
+    font-size: 1.2rem; /* Aumenta ligeramente el tamaño de la fuente */
+}
+
+
+
+
+@media (max-width: 576px) {
+    .oval-bar {
+        padding: 0.5rem; /* Reducimos el espaciado interno */
+    }
+
+    .oval-bar ul {
+        flex-direction: column; /* Apilamos los enlaces verticalmente */
+        gap: 0.5rem; /* Espaciado entre enlaces */
+    }
+
+    .oval-bar a {
+        font-size: 0.9rem; /* Reducimos el tamaño de fuente */
+    }
+}
