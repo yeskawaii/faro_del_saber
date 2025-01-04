@@ -28,24 +28,10 @@
         display:  none !important;
     }
 
-    .top-bar .container .logo1{
-        display: flex; /* Asegura que el contenedor use flexbox */
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente */
-        width: 100%; /* Asegura que tenga altura completa */
-        height: 100%;
-    }
-
-    /* Ocultar la imagen de Miguel Hidalgo en pantallas móviles */
     /* Ajustar la imagen del faro para que sea más grande en móviles */
     .top-bar .logo {
         width: 80px; /* Tamaño más pequeño en móviles */
         height: auto; /* Mantiene la proporción */
-    }
-
-    /* Ocultar la imagen de Miguel Hidalgo en pantallas móviles */
-    .top-bar .logo2{
-        display: none;
     }
 }
 
@@ -167,6 +153,7 @@
     .oval-bar ul {
         flex-direction: column; /* Apilamos los enlaces verticalmente */
         gap: 0.5rem; /* Espaciado entre enlaces */
+        width: 90%;
     }
 
     .oval-bar a {
