@@ -20,15 +20,32 @@
     justify-content: space-between; /* Espacio entre los elementos */
     align-items: center; /* Alineación vertical al centro */
     width: 100%; /* Asegura que ocupe todo el ancho */
+    min-height: 80px; /* Asegura que la barra tenga una altura mínima para el contenido */
 }
 
+/* Contenedor dentro de la barra */
 .top-bar .container {
     display: flex; /* Flexbox para los elementos dentro del header */
     justify-content: space-between; /* Espacio entre los elementos */
     align-items: center; /* Alineación vertical */
     width: 100%; /* Ocupa todo el ancho disponible */
     max-width: 1200px; /* Opcional: Limitar el ancho máximo del contenido */
-    margin: 0 auto; /* Centrar el contenido dentro del contenedor */
+    margin: 0 auto; /* Centra el contenido dentro del contenedor */
+}
+
+/* Título que debe ocupar todo el alto del contenedor */
+.top-bar .title {
+    color: white; /* Color inicial del texto */
+    font-size: 3rem; /* Ajusta el tamaño del título para que no se corte */
+    line-height: 1.2; /* Asegura que haya suficiente espacio entre las líneas de texto */
+    text-align: center; /* Centra el texto */
+    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
+    display: flex; /* Cambia a flex para alinear el contenido correctamente */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    height: auto; /* La altura se ajusta automáticamente al contenido */
+    overflow: hidden; /* Evita que el contenido se desborde si es muy grande */
+    margin: 0;
 }
 
 .top-bar .logo {
@@ -41,36 +58,15 @@
     transform: scale(1.2); /* Aumenta el tamaño de la imagen al 120% al pasar el cursor */
 }
 
-/* Animación de cambio de color de izquierda a derecha */
-.top-bar .title {
-    color: white; /* Color inicial del texto */
-    font-size: 3rem; /* Tamaño del título */
-    text-align: center; /* Centra el texto */
-    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
-    position: relative;
-    display: inline-block;
-    overflow: hidden; /* Asegura que no se desborde el gradiente */
-}
-
-/* Estilo para el contenedor del título */
-.top-bar .title {
-    color: white; /* Color inicial del texto */
-    font-size: 3rem; /* Tamaño del título */
-    text-align: center; /* Centra el texto */
-    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
-    position: relative;
-    display: inline-block;
-    overflow: hidden; /* Asegura que no se desborde el gradiente */
-}
-
 /* Estilo para cada letra */
 .top-bar .title span {
     display: inline-block;
     color: transparent; /* El color inicial es transparente */
-    background: linear-gradient(to right, white 50%, yellow 50%);
+    background: linear-gradient(to right, white 50%, yellow 50%); /* Gradiente de color */
     background-size: 200% 100%; /* Asegura que el gradiente cubra el texto */
     -webkit-background-clip: text; /* Para que el gradiente afecte solo al texto */
     transition: background-position 0.01s ease;
+    padding: 2px;
 }
 
 /* Animación al pasar el ratón por encima del título */
@@ -86,6 +82,16 @@
     100% {
         background-position: 0 0;
         opacity: 1; /* Se vuelve visible */
+    }
+}
+
+/* Animación para hacer que las letras se agranden */
+@keyframes growText {
+    0% {
+        transform: scale(1); /* Tamaño original */
+    }
+    100% {
+        transform: scale(1.5); /* Aumenta el tamaño al 150% */
     }
 }
 
