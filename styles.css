@@ -22,11 +22,29 @@
     width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
+.title-mobile{
+    color: white; /* Color inicial del texto */
+    font-size: 1rem; /* Ajusta el tamaño del título para que no se corte */
+    line-height: 1.2; /* Asegura que haya suficiente espacio entre las líneas de texto */
+    text-align: center; /* Centra el texto */
+    flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
+    display: flex; /* Cambia a flex para alinear el contenido correctamente */
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    height: 100%; /* La altura se ajusta automáticamente al contenido */
+    overflow: hidden; /* Evita que el contenido se desborde si es muy grande */
+    margin: 0;
+    display: none;
+}
+
 /* Ajustar el tamaño del título en pantallas pequeñas */
 @media (max-width: 768px) {
     .top-bar .title {
-        font-size: 1rem !important;
-        height: 100%;
+        display: none !important;
+    }
+
+    .title-mobile{
+        display: block;
     }
 
     /* Ajustar la imagen del faro para que sea más grande en móviles */
@@ -50,7 +68,7 @@
 /* Título que debe ocupar todo el alto del contenedor */
 .top-bar .title {
     color: white; /* Color inicial del texto */
-    font-size: 3rem; /* Ajusta el tamaño del título para que no se corte */
+    font-size: 2vw; /* Ajusta el tamaño del título para que no se corte */
     line-height: 1.2; /* Asegura que haya suficiente espacio entre las líneas de texto */
     text-align: center; /* Centra el texto */
     flex-grow: 1; /* Hace que el título ocupe el espacio entre las imágenes */
