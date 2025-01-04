@@ -25,7 +25,8 @@
 /* Ajustar el tamaño del título en pantallas pequeñas */
 @media (max-width: 768px) {
     .top-bar .title {
-        display:  none !important;
+        font-size: 1rem !important;
+        height: 100%;
     }
 
     /* Ajustar la imagen del faro para que sea más grande en móviles */
