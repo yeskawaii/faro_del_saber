@@ -20,8 +20,35 @@
     justify-content: space-between; /* Espacio entre los elementos */
     align-items: center; /* Alineación vertical al centro */
     width: 100%; /* Asegura que ocupe todo el ancho */
-    min-height: 80px; /* Asegura que la barra tenga una altura mínima para el contenido */
 }
+
+/* Ajustar el tamaño del título en pantallas pequeñas */
+@media (max-width: 768px) {
+    .top-bar .title {
+        display:  none !important;
+    }
+
+    .top-bar .container .logo1{
+        display: flex; /* Asegura que el contenedor use flexbox */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        width: 100%; /* Asegura que tenga altura completa */
+        height: 100%;
+    }
+
+    /* Ocultar la imagen de Miguel Hidalgo en pantallas móviles */
+    /* Ajustar la imagen del faro para que sea más grande en móviles */
+    .top-bar .logo {
+        width: 80px; /* Tamaño más pequeño en móviles */
+        height: auto; /* Mantiene la proporción */
+    }
+
+    /* Ocultar la imagen de Miguel Hidalgo en pantallas móviles */
+    .top-bar .logo2{
+        display: none;
+    }
+}
+
 
 /* Contenedor dentro de la barra */
 .top-bar .container {
