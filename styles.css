@@ -176,7 +176,10 @@ body {
     display: none; /* Ocultamos el menú hamburguesa por defecto */
     flex-direction: column;
     cursor: pointer;
-    z-index: 1000; /* Asegura que el menú hamburguesa esté sobre otros elementos */
+    z-index: 2000; /* Asegura que el menú hamburguesa esté sobre otros elementos */
+    position: absolute; /* Añadido para posicionarlo encima de otros elementos */
+    top: 10px; /* Ajusta la posición vertical si es necesario */
+    right: 10px; /* Ajusta la posición horizontal si es necesario */
 }
 
 .menu-toggle .bar {
@@ -238,5 +241,116 @@ body {
             opacity: 1;
             transform: translateY(0);
         }
+    }
+}
+
+.place-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.place-img .central-img {
+    border-radius: 10%;
+    border-color: #FF1688;
+    border-width: 25px;
+    border-style: solid;
+}
+
+.place-img img {
+    width: 25%;
+}
+
+.manos {
+    width: 12% !important;
+    top: 50%;
+    cursor: pointer;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+.manos:hover {
+    transform: translateY(-1%) scale(1.1);
+}
+
+/* Rotación de las manos */
+.rotate-left {
+    transform: rotate(25deg) !important;
+    transition: transform 0.5s ease;
+}
+
+.rotate-right {
+    transform: rotate(-25deg) !important;
+    transition: transform 0.5s ease;
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+    .place-img {
+        margin-top: 50px !important; /* Añadimos un margen superior en móviles */
+    }
+
+    .place-img img {
+        width: 50%; /* Aumentamos el tamaño de las imágenes de las manos también */
+    }
+}
+
+/* Estilos básicos para el footer */
+.footer {
+    background-color: #00B0E4; /* Fondo colorido similar al encabezado */
+    padding: 30px 0;
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left p{
+    font-size: 2rem;
+}
+
+.footer-right p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        margin-bottom: 20px;
     }
 }
