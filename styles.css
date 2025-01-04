@@ -151,7 +151,7 @@
 
 /* Estilo para los enlaces */
 .oval-bar a {
-    color: white; /* Color del texto */
+    color: #000000 !important; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
     font-weight: bold;
     font-size: 1rem; /* Tamaño base de la fuente */
@@ -163,8 +163,7 @@
 /* Efecto hover y active */
 .oval-bar a:hover,
 .oval-bar a.active {
-    background-color: #ccb104; /* Color al pasar el cursor o al hacer clic */
-    transform: scale(1.1); /* Escala el enlace un 10% */
+    transform: scale(1.2); /* Escala el enlace un 10% */
     font-size: 1.2rem; /* Aumenta ligeramente el tamaño de la fuente */
 }
 
@@ -179,7 +178,7 @@
 .menu-toggle .bar {
     width: 30px;
     height: 4px;
-    background-color: black;
+    background-color: #000000 !important;
     margin: 4px 0;
 }
 
